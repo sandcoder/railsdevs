@@ -9,7 +9,6 @@
       <%= f.label :name, class:"label" %>
       <%= f.text_field :name, class:"input" %>
     </div>
-
     <div class="input-group">
       <%= f.label :email, class:"label" %>
       <%= f.email_field :email, autocomplete: "email", class:"input" %>
@@ -32,6 +31,17 @@
     <div class="input-group">
       <%= f.label :password_confirmation, class: "label" %>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input" %>
+    </div>
+
+    <h3 class="text-lg font-bold mb-4">Roles</h3>
+    <div class="input-group">
+      <%= f.label :developer,"User railsdevs as developer?" %>
+      <%= f.check_box :developer %>
+    </div>
+
+    <div class="input-group">
+      <%= f.label :employer,"User railsdevs as employer?" %>
+      <%= f.check_box :employer %>
     </div>
 
     <div class="input-group">

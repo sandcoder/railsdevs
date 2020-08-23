@@ -7,7 +7,9 @@
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string(255)
 #  confirmed_at           :datetime
+#  developer              :boolean          default(FALSE)
 #  email                  :string(255)      default(""), not null
+#  employer               :boolean          default(FALSE)
 #  encrypted_password     :string(255)      default(""), not null
 #  first_name             :string(255)
 #  last_name              :string(255)
