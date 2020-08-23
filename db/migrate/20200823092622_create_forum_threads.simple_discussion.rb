@@ -12,5 +12,6 @@ class CreateForumThreads < ActiveRecord::Migration[4.2]
 
       t.timestamps
     end
+    add_index :forum_threads, [:forum_category_id, :user_id]
   end
 end

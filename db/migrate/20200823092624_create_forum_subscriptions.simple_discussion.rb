@@ -8,5 +8,6 @@ class CreateForumSubscriptions < ActiveRecord::Migration[4.2]
 
       t.timestamps
     end
+    add_index :forum_subscriptions, [:forum_thread_id, :user_id]
   end
 end
