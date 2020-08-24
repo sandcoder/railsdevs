@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_23_105551) do
+ActiveRecord::Schema.define(version: 2020_08_23_133141) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -98,14 +98,25 @@ ActiveRecord::Schema.define(version: 2020_08_23_105551) do
     t.string "title"
     t.string "link_to_apply"
     t.string "company_name"
-    t.string "compnay_website"
+    t.string "company_website"
     t.string "role_type"
     t.string "compensation_range"
+    t.string "compensation_type"
+    t.string "estimated_hours"
     t.boolean "remote", default: false
     t.string "year_of_experience"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price"
+    t.string "status", default: "pending"
+    t.string "headquarters"
+    t.string "upsell_type"
+    t.datetime "published_at"
+    t.datetime "featured_until"
+    t.boolean "featured", default: false
+    t.string "slug"
+    t.index ["slug"], name: "index_jobs_on_slug", unique: true
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 

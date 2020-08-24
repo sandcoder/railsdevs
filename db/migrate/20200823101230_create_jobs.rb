@@ -4,7 +4,7 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :link_to_apply
       t.string :company_name
-      t.string :compnay_website
+      t.string :company_website
       t.string :role_type
       t.string :compensation_range
       t.boolean :remote, default: false

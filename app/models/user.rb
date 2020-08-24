@@ -29,15 +29,23 @@
 #
 class User < ApplicationRecord
   include SimpleDiscussion::ForumUser
+
   has_person_name
   has_many :users, dependent: :destroy
+
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,:confirmable
 
+  
+  # def slugged_name?
+
+  # end
   def name
     "#{first_name} #{last_name}"
   end
+  
 end
