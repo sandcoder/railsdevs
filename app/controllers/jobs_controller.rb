@@ -5,7 +5,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    @jobs = Job.published.desc
   end
 
   # GET /jobs/1
@@ -70,8 +70,8 @@ class JobsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def job_params
-      params.require(:job).permit(:compensation_range, :compensation_type, :compnay_website,
-                                  :estimated_hours, :link_to_apply, :price, :headquaters, :remote,
+      params.require(:job).permit(:compensation_range, :compensation_type, :company_website, :company_description, 
+                                  :estimated_hours, :link_to_apply, :price, :headquaters, :remote, :description,
                                   :role_type, :title, :upsell_type, :year_of_experience )
     end
 end

@@ -66,6 +66,30 @@ Job.create!(
 
 Job.create!(
   id: 3,
+  company_name: "Microsoft",
+  company_website: "https://microsoft.com",
+  compensation_range: "120,000 - 130,000",
+  compensation_type: "Full-time",
+  estimated_hours: nil,
+  featured: false,
+  featured_until: nil,
+  headquarters: "California",
+  link_to_apply: "https://microsoft.com/apply",
+  price: 199,
+  published_at: DateTime.now,
+  remote: false,
+  slug: "ruby-developer-at-microsoft",
+  status: "pending",
+  title: "Ruby developer at microsoft",
+  upsell_type: nil,
+  year_of_experience: "5",
+  user_id: employer.id,
+  description: Faker::Hipster.paragraph,
+  company_description: Faker::Hipster.paragraph
+)
+
+Job.create!(
+  id: 4,
   company_name: "Apple",
   company_website: "https://apple.com",
   compensation_range: "240,000 - 250,000",
