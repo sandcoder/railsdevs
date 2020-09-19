@@ -1,46 +1,17 @@
-<p id="notice"><%= notice %></p>
+<%= content_for :hero do %>
+  <div class="bg-red-600 text-white py-24 mb-16">
+    <div class="contaner flex flex-wrap justify-center mx-auto text-center">
+      <h1 class="text-4xl lg:text-6xl font-black leading-tight">Find a Ruby on Rails developer</h1>
+      <p class="w-full text-lg text-red-100">The number one resource for ruby and rails developers</p>
+      <div class="flex items-center justify-around mt-6 mb-3">
+        <%= link_to 'Find a developer', "#", class: 'btn btn-white btn-outline lg:mr-2 py-3 px-6'%>
+        <%= link_to 'Find a job', jobs_path(anchor: 'jobs-index'), class: 'btn bg-red-700 hover:bg-red-800  lg:ml-2  py-3 px-6'%>
+      </div>  
+      <p class="w-full">or find a developer friend in <%= link_to "community", "#", class: 'underline'%></p>    
+    </div>
+  </div>
+<% end %>
+<div id="jobs-index" class="container mx-auto lg:px-48">
+  <%= render @jobs %>
+</div>
 
-<h1>Jobs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Link to apply</th>
-      <th>Description</th>
-      <th>Company name</th>
-      <th>Compnay website</th>
-      <th>Company description</th>
-      <th>Role type</th>
-      <th>Compensation range</th>
-      <th>Remote</th>
-      <th>Year of experience</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.title %></td>
-        <td><%= job.link_to_apply %></td>
-        <td><%= job.description %></td>
-        <td><%= job.company_name %></td>
-        <td><%= job.company_website %></td>
-        <td><%= job.company_description %></td>
-        <td><%= job.role_type %></td>
-        <td><%= job.compensation_range %></td>
-        <td><%= job.remote %></td>
-        <td><%= job.year_of_experience %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Job', new_job_path %>
